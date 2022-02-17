@@ -1,0 +1,154 @@
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
+export default function CartScreen(props) {
+
+    const { state } = 5
+    let id = 0
+    let qty = 0
+    const [products, setProducts] = useState(null)
+    const [flag, setFlag] = useState(true)
+    useEffect((
+    ) => {
+    }, [products])
+    if (flag) {
+        if (props.history.location.state) {
+            id = props.history.location.state.id
+            qty = props.history.location.state.qty
+            axios.post(`/615b604e75544a64d87b0c53/cart/${id}`, {
+                amount: 1
+            }).then((res) => {
+                setProducts(res.data)
+                setFlag(false)
+            })
+        }
+        else {
+            axios.get(`/615b604e75544a64d87b0c53/cart`).then((res) => {
+                setProducts(res.data)
+                setFlag(false)
+            })
+        }
+    }
+    const deleteproduct = async (ID) => {
+
+            await axios.delete(`/615b604e75544a64d87b0c53/cart/${ID
+        }`).then(()=>{
+            console.log("mamtak 2r3a ya watttشششty",ID)
+            axios.get(`/615b604e75544a64d87b0c53/cart`).then((res) => {
+                setProducts(res.data)
+            })
+            // setFlag(true)
+         })
+    }
+    return (
+        <
+   div >
+            <
+   h1 > cart screen < /h1> <p>
+
+                    ADD TO CART: PRODUCT ID: {id},
+                    Qty: {qty}
+
+
+                    <
+   /p>
+
+                    <
+   div className="row top" >
+                        <
+   div className="col-2" >
+                            <
+   h1 > Shopping Cart < /h1> <ul>
+
+
+
+                                    {
+
+                                        (products) ? products.map(product => {
+                                            if (product.image) {
+                                                return (
+                                                    <li key={product.id}>
+
+
+
+                                                        <
+   div className="row" >
+                                                            <
+                                                                img src={
+                                                                    product.image ? product.image : ""
+                                                                }
+                                                                className="small" />
+
+                                                            < div className="row" >{product.image ? product.name : ""
+                                                            }</div>
+
+                                                            < div className="row" > < div > {
+                                                                qty
+                                                            } < /div>  < /div >
+
+                                                                <
+div className="row" > {
+                                                                        product.image ? product.price : ""
+
+                                                                    }
+                                                                    $ < /div>
+
+
+                                                                    <
+div > < button onClick= {()=>deleteproduct(product.id)}
+                                                                        > delete < /button>< /div >
+
+
+
+
+                                                                            <
+/div >
+
+
+
+
+
+
+                                                                            < /li >)}
+                                                                            else{
+                                                                                axios.delete(`/615b604e75544a64d87b0c53/cart/${product._id}`)
+                                                                            }}):<h1></h1>}
+
+
+
+
+
+
+                                                                            <
+li >
+                                                                                <
+h2 >
+                                                                                    Subtotal <
+/h2> < /
+li >
+
+
+
+                                                                                    <
+button
+                                                                                        type="button"
+                                                                                        className="primary block" >
+                                                                                        <
+Link to='/shipping' > order < /Link>< /
+button > < /
+ul >
+
+
+
+                                                                                            <
+/
+div >
+
+                                                                                            <
+/div>
+
+                                                                                            <
+/div> );
+}

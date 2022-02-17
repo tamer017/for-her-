@@ -1,0 +1,264 @@
+            html {
+                font-size: 62.5%;
+                /* 1rem */
+                box-sizing: border-box;
+            }
+            
+            body {
+                margin: 0;
+                height: 100vh;
+                font-size: 1.6rem;
+                font-family: Arial, Helvetica, sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            
+            .grid-container {
+                display: grid;
+                grid-template-areas: 'header''main''footer';
+                grid-template-columns: 1 fr;
+                grid-template-rows: 5rem 1fr 5rem;
+                height: 100%;
+            }
+            
+            header {
+                grid-area: header;
+                background-color: rgb(241, 168, 180);
+            }
+            
+            main {
+                grid-area: main;
+                padding: 1rem;
+            }
+            
+            footer {
+                grid-area: footer;
+                background-color: rgb(241, 168, 180);
+                color: white;
+            }
+            
+            a {
+                text-decoration: none;
+            }
+            
+            a:hover {
+                color: black;
+            }
+            
+            a.logo {
+                color: white;
+                font-size: 3rem;
+                font-weight: bold;
+            }
+            
+            header a {
+                color: white;
+                padding: 1rem;
+            }
+            
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .row.center {
+                justify-content: center;
+            }
+            
+            img {
+                border-radius: .5rem 0.5rem 0rem 0rem;
+            }
+            
+            img.medium {
+                max-width: 29rem;
+                width: 100%;
+            }
+            
+            .card {
+                border: .1rem #c0c0c0 solid;
+                background-color: #f8f8f8;
+                border-radius: .5rem;
+                margin: 1rem;
+            }
+            
+            .card-body {
+                padding: 1rem;
+            }
+            
+            .card-body>* {
+                margin-bottom: .5rem;
+                color: #203040;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+                padding: 1rem 0;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                padding: 1rem 0;
+            }
+            
+            .price {
+                font-size: 2rem;
+            }
+            
+            .rating span {
+                color: #f0c040;
+                font-size: 1.2rem;
+            }
+            
+            .rating {
+                display: inline-block;
+            }
+            
+            .rating a {
+                font-size: 1rem;
+                text-decoration: none;
+                color: black;
+            }
+            
+            .rating a:hover {
+                color: blue;
+            }
+            
+            .row .top {
+                align-items: flex-start;
+            }
+            
+            .col-1 {
+                flex: 1 1 25rem;
+            }
+            
+            .col-2 {
+                flex: 2 1 40rem;
+            }
+            
+            .col-2 img {
+                width: 90%;
+            }
+            
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            
+            li {
+                margin-top: 1rem;
+            }
+            
+            button {
+                font-size: 1.6rem;
+                font-family: Arial, Helvetica, sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                background-color: rgb(241, 168, 180);
+                border: none;
+                cursor: pointer;
+                color: white;
+                padding: 1rem;
+                width: 100%;
+                border-radius: .5rem;
+            }
+            /*    button:hover {
+                border: solid rgb(202, 163, 170);
+            }*/
+            /*.row .im {
+    width: 6%;
+    height: 6%;
+}*/
+            
+            select {
+                cursor: pointer;
+            }
+            
+            .min-30 {
+                min-width: 30rem;
+            }
+            
+            img.small {
+                max-width: 5rem;
+                width: 100%;
+            }
+            
+            .form {
+                max-width: 60rem;
+                margin: 0 auto;
+                padding: .7%;
+            }
+            
+            .form h1 {
+                text-align: center;
+                text-transform: capitalize;
+            }
+            
+            .form>div {
+                display: flex;
+                flex-direction: column;
+                margin: 3rem;
+            }
+            
+            .form label {
+                display: block;
+                margin: 1rem 0;
+            }
+            
+            .form input {
+                background-color: #f1f2f2;
+                border: .2rem solid #a5aaaa;
+                border-radius: .5rem;
+                padding: 1rem;
+            }
+            
+            .success {
+                color: green;
+            }
+            
+            .error {
+                color: red;
+            }
+            
+           
+            
+            .admin {
+                padding: 6rem;
+            }
+            
+            .admin h1 {
+                text-align: center;
+                margin-top: 0;
+            }
+            
+            .admin .row {
+                margin-top: 3rem;
+            }
+            
+            .admin button {
+                padding: 2rem;
+            }
+            .dropdown {
+                display: inline-block;
+                position: relative;
+              }
+              .dropdown-content {
+                position: absolute;
+                display: none;
+                right: 0;
+                min-width: 12rem;
+                padding: 1rem;
+                z-index: 1;
+                background-color: #203040;
+                margin: 0;
+                margin-top: 0.4rem;
+                border-radius: 0.5rem;
+              }
+              .dropdown:hover .dropdown-content {
+                display: block;
+              }
+              .hup{
+                  text-align: center;
+              }
